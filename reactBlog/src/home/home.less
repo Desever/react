@@ -1,15 +1,71 @@
 .zbp-home{
   position: relative;
   height:100%;
-  background: url("./images/public_bg.png") no-repeat center center;
-  background-size: 100% 100%;
-  -webkit-background-size: 100% 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   -moz-box-orient:vertical;
   -webkit-box-orient:vertical;
   box-orient:vertical;
-  
+  overflow: hidden;
+  #tm {
+    display: none;
+  }
+  .sidenav {
+    background: rgb(50, 60, 60); width: 150px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: 100px;
+  }
+  .sidenav li {
+    list-style-type: none;
+  }
+  .sidenav a { color: white; text-decoration: none; }
+  .sidenav b {
+    font: bold 12px/48px Montserrat; display: block;
+    opacity: 0; transform: translateX(50px); transition: all 0.4s;
+  }
+  .sidenav i {
+    display: block; width: 50px; float: left;
+    font-size: 16px; line-height: 48px; text-align: center;
+  }
+  #tm:checked ~ section {
+    transform: translateX(150px);
+    -webkit-transform: translateX(150px);
+  }
+  #tm:checked ~ .sidenav b {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
+  section{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index: 200;
+    background: url("./images/public_bg.png") no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    transition: all 0.35s;
+    -webkit-transition: all 0.35s;
+  }
+  #tm:checked ~ .sidenav li:nth-child(1) b {transition-delay: 0.08s;}
+  #tm:checked ~ .sidenav li:nth-child(2) b {transition-delay: 0.16s;}
+  #tm:checked ~ .sidenav li:nth-child(3) b {transition-delay: 0.24s;}
+  #tm:checked ~ .sidenav li:nth-child(4) b {transition-delay: 0.32s;}
+  #tm:checked ~ .sidenav li:nth-child(5) b {transition-delay: 0.40s;}
+  #tm:checked ~ .sidenav li:nth-child(6) b {transition-delay: 0.48s;}
+  .z-checkSidenav{
+    position: absolute;
+    left:0.45rem;
+    top:0.45rem;
+    width:1rem;
+    height:1rem;
+    display: block;
+  }
   //导航
   header{
     padding-left:0.55rem;
@@ -21,7 +77,7 @@
     justify-content:space-between;
     i{
       color: #ffffff;
-      font-size:25px;
+      font-size:0.7rem;
     }
   }
   //内容
