@@ -17,3 +17,5 @@
 2、侧栏过渡效果
 
 3、首屏加载优化
+
+gitbook地址：https://desever.gitbooks.io/reactblog/content/
